@@ -3,10 +3,17 @@ import { resolve } from "node:path";
 
 const requiredFiles = [
   "index.html",
+  "dashboard.html",
+  "analytics.html",
   "member.html",
   "payment.html",
   "attandance.html",
   "script.js",
+  "styles.css",
+  "js/firebase-config.js",
+  "js/analytics-data.js",
+  "js/dashboard.js",
+  "js/analytics.js",
   "edata.png",
 ];
 

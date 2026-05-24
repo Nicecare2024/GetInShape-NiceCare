@@ -4,95 +4,142 @@
   <meta charset="UTF-8">
   <title>Dashboard Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS -->
+  <meta name="description" content="Get In Shape gym management portal — edata">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #121212;
-      color: #f8f9fa;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-weight: 600;
-      color: #00bcd4;
-    }
-
-    .card-button {
-      background-color: #d3d3d3; /* Bright gray */
-      color: #212529;
-      border: none;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      padding: 20px;
-      text-align: center;
-      cursor: pointer;
-      width: 100%;
-      aspect-ratio: 1 / 1; /* Makes the card square */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card-button:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-    }
-
-    .icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
-
-    .card-title {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  </style>
+  <link href="styles.css" rel="stylesheet">
 </head>
-<body class="py-5">
+<body class="page-dashboard">
 
-  <div class="container">
-    <div class="text-center mb-5">
-        <img src="edata.png" alt="Dashboard Logo" class="img-fluid" style="max-height: 120px; border-radius: 50%;">
-    </div>
-      
-
-    <div class="row g-4 justify-content-center">
-      <div class="col-6 col-md-4 col-lg-3">
-        <a href="member.html">
-          <div class="card-button">
-            <div class="icon">👥</div>
-            <div class="card-title">Members Area</div>
-          </div>
-        </a>
+  <div class="dashboard-layout">
+    <header class="dashboard-topbar">
+      <div class="dashboard-brand">
+        <img src="edata.png" alt="Get In Shape logo" class="dashboard-brand-logo">
+        <div class="dashboard-brand-text">
+          <span class="dashboard-brand-name">Get In Shape</span>
+          <span class="dashboard-brand-product">e-data portal</span>
+        </div>
       </div>
-
-      <div class="col-6 col-md-4 col-lg-3">
-        <a href="payment.html">
-          <div class="card-button">
-            <div class="icon">💳</div>
-            <div class="card-title">Payment Area</div>
-          </div>
-        </a>
+      <div class="dashboard-topbar-meta">
+        <span class="dashboard-status">
+          <span class="dashboard-status-dot" aria-hidden="true"></span>
+          System online
+        </span>
       </div>
+    </header>
 
-      <div class="col-6 col-md-4 col-lg-3">
-        <a href="tel: +91 8972424853">
-          <div class="card-button">
-            <div class="icon">🛠️</div>
-            <div class="card-title">IT Support</div>
+    <main class="dashboard-main">
+      <section class="dashboard-intro">
+        <p class="dashboard-eyebrow">Gym Management</p>
+        <h1 class="dashboard-headline">Portal home</h1>
+        <p class="dashboard-lead">
+          Central hub for business insights, member records, payment tracking, and technical support.
+          Select a module below to get started.
+        </p>
+      </section>
+
+      <section class="dashboard-modules" aria-label="Portal modules">
+        <a href="dashboard.html" class="module-card" aria-label="Business Dashboard">
+          <div class="module-card-header">
+            <span class="module-icon module-icon--dashboard" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3h18v18H3z"/>
+                <path d="M9 9h6v9H9z"/>
+                <path d="M3 9h6"/>
+                <path d="M15 9h6"/>
+              </svg>
+            </span>
+            <span class="module-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
           </div>
+          <h2 class="module-title">Business Dashboard</h2>
+          <p class="module-desc">See KPI summaries, growth trends, and the latest activity at a glance.</p>
         </a>
-      </div>
-    </div>
+
+        <a href="analytics.html" class="module-card" aria-label="Analytics">
+          <div class="module-card-header">
+            <span class="module-icon module-icon--analytics" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20V10"/>
+                <path d="M10 20V4"/>
+                <path d="M16 20v-6"/>
+                <path d="M22 20V14"/>
+              </svg>
+            </span>
+            <span class="module-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+          <h2 class="module-title">Analytics</h2>
+          <p class="module-desc">Explore deeper charts, payment behavior, top payers, and actionable lists.</p>
+        </a>
+
+        <a href="member.html" class="module-card" aria-label="Members">
+          <div class="module-card-header">
+            <span class="module-icon module-icon--members" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </span>
+            <span class="module-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+          <h2 class="module-title">Members</h2>
+          <p class="module-desc">Register members, update profiles, and search the member directory.</p>
+        </a>
+
+        <a href="payment.html" class="module-card" aria-label="Payments">
+          <div class="module-card-header">
+            <span class="module-icon module-icon--payments" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <path d="M2 10h20"/>
+              </svg>
+            </span>
+            <span class="module-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+          <h2 class="module-title">Payments</h2>
+          <p class="module-desc">Record membership fees, view payment history, and search by phone number.</p>
+        </a>
+
+        <a href="tel:+918972424853" class="module-card module-card--support" aria-label="IT Support">
+          <div class="module-card-header">
+            <span class="module-icon module-icon--support" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </span>
+            <span class="module-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+          <h2 class="module-title">IT Support</h2>
+          <p class="module-desc">Contact the technical team for portal assistance and troubleshooting.</p>
+          <span class="module-contact">+91 89724 24853</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="dashboard-footer">
+      <p class="dashboard-footer-copy">&copy; 2025-2026 Get In Shape · NiceCare E-data</p>
+      <p class="dashboard-footer-note">Internal use only</p>
+    </footer>
   </div>
 
 </body>

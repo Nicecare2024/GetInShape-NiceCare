@@ -3,119 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <title>Member Management</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Important for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #f9f9f9;
-    }
-
-    .form-section {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .member-card {
-      transition: transform 0.2s;
-    }
-
-    .member-card:hover {
-      transform: scale(1.01);
-    }
-
-    .card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    }
-
-    .btn-primary,
-    .btn-outline-primary {
-      border-radius: 30px;
-    }
-
-    h2, h4, h5 {
-      font-weight: 600;
-      text-align: center;
-    }
-
-    @media (max-width: 576px) {
-      .form-section {
-        padding: 20px;
-      }
-
-      .btn {
-        margin-bottom: 10px;
-      }
-
-      #prevBtn, #nextBtn {
-        width: 100%;
-        margin: 5px 0;
-      }
-    }
-  </style>
+  <link href="styles.css" rel="stylesheet">
 </head>
-<body class="container py-4 px-3">
+<body class="page-app page-members">
 
-  <div class="mb-4">
-    <button onclick="history.back()" class="btn btn-outline-secondary">
-      ← Back
-    </button>
+  <div class="app-shell">
+    <header class="app-topbar">
+      <a href="index.html" class="app-brand">
+        <img src="edata.png" alt="Get In Shape logo" class="app-brand-logo">
+        <div class="app-brand-text">
+          <span class="app-brand-name">Get In Shape</span>
+          <span class="app-brand-module">Member Management</span>
+        </div>
+      </a>
+      <button type="button" onclick="history.back()" class="btn-back">← Dashboard</button>
+    </header>
+
+    <section class="page-intro">
+      <p class="page-eyebrow">Member Directory</p>
+      <h1 class="page-title">Manage gym members</h1>
+      <p class="page-subtitle">Register new members, search the directory, and update records in one place.</p>
+    </section>
+
+    <section class="member-actions">
+      <div class="member-actions__add">
+        <div class="member-actions__header">
+          <span class="member-actions__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+          </span>
+          <div>
+            <h2 class="member-actions__title">Add Member</h2>
+            <p class="member-actions__desc">Register a new gym member to the directory.</p>
+          </div>
+        </div>
+
+        <form id="memberForm" class="member-form">
+          <div class="member-form__grid">
+            <div class="member-form__field">
+              <label class="form-label-modern" for="name">Full Name</label>
+              <input type="text" class="form-control-modern" placeholder="Enter name" id="name" required>
+            </div>
+            <div class="member-form__field">
+              <label class="form-label-modern" for="phone">Phone</label>
+              <input type="tel" class="form-control-modern" placeholder="Phone number" id="phone" required>
+            </div>
+            <div class="member-form__field">
+              <label class="form-label-modern" for="joiningDate">Joining Date</label>
+              <input type="date" class="form-control-modern" id="joiningDate" required>
+            </div>
+            <div class="member-form__field">
+              <label class="form-label-modern" for="bloodGroup">Blood Group</label>
+              <input type="text" class="form-control-modern" placeholder="e.g. O+" id="bloodGroup" required>
+            </div>
+            <div class="member-form__field">
+              <label class="form-label-modern" for="memberId">Member ID</label>
+              <input type="text" class="form-control-modern" placeholder="Unique member ID" id="memberId" required>
+            </div>
+          </div>
+          <div class="member-form__footer">
+            <button type="submit" class="btn-primary-modern">Add Member</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="member-actions__search">
+        <div class="member-actions__header member-actions__header--search">
+          <span class="member-actions__icon member-actions__icon--search" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <div>
+            <h2 class="member-actions__title">Search</h2>
+            <p class="member-actions__desc">Find members quickly by name.</p>
+          </div>
+        </div>
+
+        <div class="search-bar">
+          <label class="form-label-modern" for="searchName">Search by name</label>
+          <div class="search-bar__row">
+            <input type="text" id="searchName" class="form-control-modern search-bar__input" placeholder="Type a member name…">
+            <div class="search-bar__actions">
+              <button type="button" class="btn-primary-modern" onclick="searchMember()">Search</button>
+              <button type="button" class="btn-ghost-modern" onclick="loadMembers()">Clear</button>
+            </div>
+          </div>
+          <p class="search-bar__hint">Results appear below. Clear to show all members again.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="member-roster" aria-label="Member records">
+      <div class="member-roster-header">
+        <div>
+          <h2 class="member-roster-title">Registered members</h2>
+          <p id="memberCount" class="member-roster-count">0 members on file</p>
+        </div>
+        <p id="pageIndicator" class="member-roster-page" aria-live="polite"></p>
+      </div>
+
+      <div id="memberCards" class="member-grid"></div>
+
+      <div class="pagination-bar">
+        <button type="button" id="prevBtn" class="btn-outline-modern" onclick="prevPage()" disabled>← Previous</button>
+        <button type="button" id="nextBtn" class="btn-outline-modern" onclick="nextPage()">Next →</button>
+      </div>
+    </section>
   </div>
 
-  <div class="form-section mb-5">
-    <h2 class="mb-4 text-primary">Add Member</h2>
-    <form id="memberForm" class="row g-3">
-      <div class="col-md-6 col-lg-4">
-        <input type="text" class="form-control" placeholder="Name" id="name" required>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <input type="date" class="form-control" id="joiningDate" required>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <input type="text" class="form-control" placeholder="Phone Number" id="phone" required>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <input type="text" class="form-control" placeholder="Blood Group" id="bloodGroup" required>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <input type="text" class="form-control" placeholder="Member ID" id="memberId" required>
-      </div>
-      <div class="col-md-6 col-lg-4 d-grid">
-        <button type="submit" class="btn btn-primary">Add Member</button>
-      </div>
-    </form>
-  </div>
-
-  <div class="form-section mb-5">
-    <h4 class="mb-3 text-secondary">Search Members</h4>
-    <div class="row g-3">
-      <div class="col-md-6 col-lg-4">
-        <input type="text" id="searchName" class="form-control" placeholder="Search by Name">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2 d-grid">
-        <button class="btn btn-outline-primary" onclick="searchMember()">Search</button>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2 d-grid">
-        <button class="btn btn-outline-secondary" onclick="loadMembers()">Clear</button>
-      </div>
-    </div>
-  </div>
-
-  <h5 id="memberCount" class="text-success mb-3">Total Members: 0</h5>
-
-  <div id="memberCards" class="row gy-4"></div>
-
-  <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center my-4 gap-2">
-    <button id="prevBtn" class="btn btn-outline-primary" onclick="prevPage()" disabled>← Previous</button>
-    <button id="nextBtn" class="btn btn-outline-primary" onclick="nextPage()">Next →</button>
-  </div>
-
-  <!-- Firebase + Script -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
