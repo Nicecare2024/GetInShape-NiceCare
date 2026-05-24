@@ -1,0 +1,23 @@
+{
+  "name": "getinshape-nicecare-edata",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Get In Shape gym management portal (edata)",
+  "scripts": {
+    "validate:assets": "node scripts/check-assets.mjs",
+    "validate:js": "node --check script.js",
+    "validate:html": "html-validate *.html",
+    "validate": "npm run validate:assets && npm run validate:js && npm run validate:html",
+    "test:smoke": "playwright test",
+    "ci": "npm run validate && npm run test:smoke"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "html-validate": "^9.5.3",
+    "serve": "^14.2.4",
+    "vercel": "^41.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
