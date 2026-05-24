@@ -198,6 +198,9 @@ function renderMemberCards(memberEntries, startIndex = 0) {
 
       <footer class="member-card-pro__footer">
         <div class="member-card-actions member-card-actions-view">
+          <button type="button" class="btn-member-action btn-member-view" onclick="openMemberDetails('${doc.id}')" title="View more" aria-label="View more">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
           <button type="button" class="btn-member-action btn-member-edit" onclick="openMemberEdit('${doc.id}')" title="Edit member" aria-label="Edit member">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
           </button>
@@ -224,6 +227,10 @@ function openMemberEdit(id) {
   const card = document.querySelector(`[data-member-id="${id}"]`);
   if (!card) return;
   card.classList.add("is-editing");
+}
+
+function openMemberDetails(id) {
+  window.location.href = `member-details.html?id=${encodeURIComponent(id)}`;
 }
 
 function cancelMemberEdit(id) {

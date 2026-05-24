@@ -1296,6 +1296,18 @@ body.page-app {
   background: #0f766e;
 }
 
+.btn-member-view {
+  color: #0f172a;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.btn-member-view:hover {
+  color: var(--color-primary-dark);
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
 .btn-member-delete {
   color: var(--color-text-muted);
   background: var(--color-surface);

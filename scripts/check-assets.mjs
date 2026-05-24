@@ -5,6 +5,7 @@ const requiredFiles = [
   "index.html",
   "dashboard.html",
   "analytics.html",
+  "member-details.html",
   "member.html",
   "payment.html",
   "attandance.html",
@@ -14,6 +15,7 @@ const requiredFiles = [
   "js/analytics-data.js",
   "js/dashboard.js",
   "js/analytics.js",
+  "js/member-details.js",
   "edata.png",
 ];
 

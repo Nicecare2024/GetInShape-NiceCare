@@ -14,6 +14,12 @@ const pages = [
     role: "heading",
   },
   {
+    path: "/member-details.html?id=test-member-id",
+    title: "Member Details",
+    heading: "Member Bill Details",
+    role: "heading",
+  },
+  {
     path: "/dashboard.html",
     title: "Business Dashboard",
     heading: "Business dashboard",
