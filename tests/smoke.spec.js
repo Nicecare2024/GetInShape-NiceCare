@@ -62,7 +62,7 @@ for (const pageInfo of pages) {
 
 test("dashboard logo asset loads", async ({ page }) => {
   await page.goto("/");
-  const logo = page.locator('img[src="edata.png"]');
+  const logo = page.locator('img[src="assets/nicecare_logo.png"]');
   await expect(logo).toBeVisible();
 });
 
