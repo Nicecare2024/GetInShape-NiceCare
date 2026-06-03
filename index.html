@@ -13,17 +13,11 @@
   <div class="dashboard-layout">
     <header class="dashboard-topbar">
       <div class="dashboard-brand">
-        <img src="edata.png" alt="Get In Shape logo" class="dashboard-brand-logo">
+        <img src="assets/nicecare_logo.png" alt="NiceCare logo" class="dashboard-brand-logo">
         <div class="dashboard-brand-text">
           <span class="dashboard-brand-name">Get In Shape</span>
-          <span class="dashboard-brand-product">e-data portal</span>
+          <span class="dashboard-brand-product">nicecare portal</span>
         </div>
-      </div>
-      <div class="dashboard-topbar-meta">
-        <span class="dashboard-status">
-          <span class="dashboard-status-dot" aria-hidden="true"></span>
-          System online
-        </span>
       </div>
     </header>
 
@@ -33,114 +27,71 @@
         <h1 class="dashboard-headline">Portal home</h1>
         <p class="dashboard-lead">
           Central hub for business insights, member records, payment tracking, and technical support.
-          Select a module below to get started.
         </p>
       </section>
 
       <section class="dashboard-modules" aria-label="Portal modules">
-        <a href="dashboard.html" class="module-card" aria-label="Business Dashboard">
-          <div class="module-card-header">
-            <span class="module-icon module-icon--dashboard" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 3h18v18H3z"/>
-                <path d="M9 9h6v9H9z"/>
-                <path d="M3 9h6"/>
-                <path d="M15 9h6"/>
-              </svg>
-            </span>
-            <span class="module-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-              </svg>
-            </span>
+        <!-- Members Card -->
+        <a href="member.html" class="module-card module-card--image" aria-label="Members">
+          <div class="module-card-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop')">
+            <div class="module-card-image-overlay"></div>
           </div>
-          <h2 class="module-title">Business Dashboard</h2>
-          <p class="module-desc">See KPI summaries, growth trends, and the latest activity at a glance.</p>
+          <div class="module-card-content">
+            <span class="module-eyebrow">Member Management</span>
+            <h2 class="module-title">Members</h2>
+            <p class="module-title-accent">Directory & Profiles.</p>
+            <p class="module-desc">Register members, update profiles, and search the member directory with advanced filters.</p>
+            <div class="module-divider"></div>
+            <div class="module-footer">
+              <div class="module-stat" id="registered-members-count">--</div>
+              <div class="module-time">Registered members</div>
+            </div>
+          </div>
         </a>
 
-        <a href="analytics.html" class="module-card" aria-label="Analytics">
-          <div class="module-card-header">
-            <span class="module-icon module-icon--analytics" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 20V10"/>
-                <path d="M10 20V4"/>
-                <path d="M16 20v-6"/>
-                <path d="M22 20V14"/>
-              </svg>
-            </span>
-            <span class="module-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-              </svg>
-            </span>
+        <!-- IT Support Card -->
+        <a href="https://support.nicecare.co/chat/" target="_blank" class="module-card module-card--image" aria-label="IT Support">
+          <div class="module-card-image" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop')">
+            <div class="module-card-image-overlay"></div>
           </div>
-          <h2 class="module-title">Analytics</h2>
-          <p class="module-desc">Explore deeper charts, payment behavior, top payers, and actionable lists.</p>
-        </a>
-
-        <a href="member.html" class="module-card" aria-label="Members">
-          <div class="module-card-header">
-            <span class="module-icon module-icon--members" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </span>
-            <span class="module-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-              </svg>
-            </span>
+          <div class="module-card-content">
+            <span class="module-eyebrow">Technical Assistance</span>
+            <h2 class="module-title">IT Support</h2>
+            <p class="module-title-accent">Help & Support.</p>
+            <p class="module-desc">Contact the technical team for portal assistance, troubleshooting, and system support.</p>
+            <div class="module-divider"></div>
+            <div class="module-footer">
+              <div class="module-stat">24/7</div>
+              <div class="module-time">Support Available</div>
+            </div>
           </div>
-          <h2 class="module-title">Members</h2>
-          <p class="module-desc">Register members, update profiles, and search the member directory.</p>
-        </a>
-
-        <a href="payment.html" class="module-card" aria-label="Payments">
-          <div class="module-card-header">
-            <span class="module-icon module-icon--payments" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="2"/>
-                <path d="M2 10h20"/>
-              </svg>
-            </span>
-            <span class="module-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-          <h2 class="module-title">Payments</h2>
-          <p class="module-desc">Record membership fees, view payment history, and search by phone number.</p>
-        </a>
-
-        <a href="https://app.nicecare.co/" class="module-card module-card--support" aria-label="IT Support">
-          <div class="module-card-header">
-            <span class="module-icon module-icon--support" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-              </svg>
-            </span>
-            <span class="module-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-          <h2 class="module-title">IT Support</h2>
-          <p class="module-desc">Contact the technical team for portal assistance and troubleshooting.</p>
-          <span class="module-contact">https://app.nicecare.co/</span>
         </a>
       </section>
     </main>
 
     <footer class="dashboard-footer">
-      <p class="dashboard-footer-copy">&copy; 2025-2026 Get In Shape · NiceCare E-data</p>
+      <p class="dashboard-footer-copy">Powered by <a href="https://nicecare.co/" target="_blank" rel="noopener noreferrer">NiceCare</a></p>
       <p class="dashboard-footer-note">Internal use only</p>
     </footer>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script>
+    async function loadRegisteredMemberCount() {
+      const countEl = document.getElementById('registered-members-count');
+      if (!countEl || !window.db) return;
 
-</body>
+      try {
+        const snapshot = await db.collection('members').get();
+        const total = snapshot.size;
+        countEl.textContent = total === 1 ? '1' : total.toString();
+      } catch (error) {
+        console.error('Unable to load registered member count:', error);
+        countEl.textContent = '--';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadRegisteredMemberCount);
+  </script></body>
 </html>
