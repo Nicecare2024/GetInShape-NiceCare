@@ -27,7 +27,36 @@
 
     const rows = snapshot.docs
       .map((doc) => ({ id: doc.id, ...doc.data() }))
-      .sort((a, b) => (b.year || "").localeCompare(a.year || ""))
+      .sort((a, b) => {
+        const parseDate = (value) => {
+          if (!value) return 0;
+          const text = String(value).trim();
+          const dmy = text.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})$/);
+          if (dmy) {
+            const day = Number(dmy[1]);
+            const month = Number(dmy[2]) - 1;
+            let year = Number(dmy[3]);
+            if (year < 100) year += 2000;
+            const date = new Date(year, month, day);
+            return Number.isFinite(date.getTime()) ? date.getTime() : 0;
+          }
+          const iso = new Date(text);
+          return Number.isFinite(iso.getTime()) ? iso.getTime() : 0;
+        };
+
+        const aTime = parseDate(a.createdAt || a.year);
+        const bTime = parseDate(b.createdAt || b.year);
+
+        if (aTime !== bTime) {
+          return bTime - aTime;
+        }
+
+        if (a.billNo && b.billNo) {
+          return b.billNo.localeCompare(a.billNo, undefined, { numeric: true, sensitivity: "base" });
+        }
+
+        return 0;
+      })
       .map((bill) => `
         <tr>
           <td>${escapeHtml(bill.year || "-")}</td>
