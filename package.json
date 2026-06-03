@@ -15,7 +15,7 @@
     "@playwright/test": "^1.52.0",
     "html-validate": "^9.5.3",
     "serve": "^14.2.4",
-    "vercel": "^41.7.0"
+    "vercel": "^54.7.1"
   },
   "engines": {
     "node": "22.x"
