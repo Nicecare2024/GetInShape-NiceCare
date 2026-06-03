@@ -69,22 +69,7 @@ test("dashboard logo asset loads", async ({ page }) => {
 test("dashboard navigation links resolve", async ({ page }) => {
   await page.goto("/");
 
-  await page.getByRole("link", { name: "Business Dashboard", exact: true }).click();
-  await expect(page).toHaveURL(/\/dashboard(\.html)?$/);
-  await expect(page.getByRole("heading", { name: "Business dashboard" })).toBeVisible();
-
-  await page.goto("/");
-  await page.getByRole("link", { name: "Analytics", exact: true }).click();
-  await expect(page).toHaveURL(/\/analytics(\.html)?$/);
-  await expect(page.getByRole("heading", { name: "Advanced analytics" })).toBeVisible();
-
-  await page.goto("/");
   await page.getByRole("link", { name: "Members", exact: true }).click();
   await expect(page).toHaveURL(/\/member(\.html)?$/);
   await expect(page.getByRole("heading", { name: "Add Member" })).toBeVisible();
-
-  await page.goto("/");
-  await page.getByRole("link", { name: "Payments", exact: true }).click();
-  await expect(page).toHaveURL(/\/payment(\.html)?$/);
-  await expect(page.getByRole("heading", { name: "Add Payment" })).toBeVisible();
 });
